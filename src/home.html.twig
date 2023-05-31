@@ -20,7 +20,7 @@
   </div>
 </div>
 
-    <div class="home-blocks">
+    <div class="container">
         {% for key, block in blocks %}
             {% if key != 0 or block.type != 'cta' %}
                 {{ block.content|raw }}
