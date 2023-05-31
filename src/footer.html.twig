@@ -57,7 +57,7 @@
     <div class="footer-menu">
         <div class="container">
             <div class="row justify-content-center">
-                {% for item in project.footer %}
+                {% for item in current_project.footer %}
                     <div class="col-12 col-md-4 col-lg-2 footer-menu-column">
                         <a href="{{ item.url }}" class="footer-menu-column-title"
                            {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
