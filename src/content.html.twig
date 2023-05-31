@@ -43,12 +43,19 @@
   </div>
 </div>
 {% endif %}
-<div class="content">
-    <div class="content-splash">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12"> 
 
-
-        <h1>{{ title }}</h1>
-
+        {% if (section_id|default(null)) == 'posts' %}
+        <h1 class="title-posts">{{ title }}</h1>
+        {% endif %}
+        {% if (section_id|default(null)) == 'forms' %}
+        <h1 class="title-forms">{{ title }}</h1>
+        {% endif %}
+        {% if (section_id|default(null)) == 'pages' %}
+        <h1 class="title-pages">{{ title }}</h1>
+        {% endif %}
         {% if date|default(null) or categories|default([])|length > 0 %}
             <div class="content-splash-metadata">
                 {% if date|default(null) %}
@@ -69,7 +76,6 @@
 
 
 
-    </div>
 
     <div class="content-publication">
         {{ content|raw }}
@@ -99,4 +105,6 @@
             </div>
         </div>
     {% endif %}
+    </div> 
+  </div>
 </div>
