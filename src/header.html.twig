@@ -38,7 +38,7 @@
                         <ul class="header-menu"
                             data-controller="menu"
                             data-cookie="{{ membership.cookie_name }}">
-                            {% for item in project.header %}
+                            {% for item in current_project.header %}
                                 <li>
                                     <div class="header-menu-label">
                                         <a href="{{ item.url }}"
@@ -115,7 +115,7 @@
                      data-mobile-menu-target="menu">
                     <nav class="menu">
                         <ul class="header-mobile">
-                            {% for item in project.header %}
+                            {% for item in current_project.header %}
                                 <li>
                                     <a href="{{ item.url }}" {% if item.openNewTab %}target="_blank"
                                        rel="noopener noreferrer"{% endif %}>
