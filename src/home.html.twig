@@ -27,34 +27,39 @@
             {% endif %}
         {% endfor %}
     </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12"> 
+      <div data-controller="searchengine"
+           data-searchengine-endpoint-value="https://search.citipo.com"
+           data-searchengine-key-value="f5a718eda068f352cc86dc3aa9d3ab315c02eb28c6154fdccb0631d01f4eed16"
+           data-searchengine-project-value="9c9f925a-d9d7-4a99-9417-4914be7da502"
+           data-searchengine-type-value="post"
+           data-searchengine-limit-value="100">
+           <div class="bloc-recherche-filtre">
+              <input type="text" data-searchengine-target="queryInput" class="form-control input-recherche" placeholder="Que recherchez-vous ?"/>
+           </div>
+           <template data-searchengine-target="resultTemplate">
+              <div>
+                  <a  href="/posts/<%= item.encoded_uuid %>/<%= item.metadata.slug %>" data-turbo="optional">
+                      <div class="">
+                          <div class="row">
+                              <div class="col-lg-10">
+                                  <h2 class="">
+                                      <%= item.title %>
+                                  </h2>
+                              </div>
+                              <div class="col-lg-2">
+                                <p><%= item.date %></p>
+                              </div>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+          </template>
 
-<div data-controller="searchengine"
-     data-searchengine-endpoint-value="https://search.citipo.com"
-     data-searchengine-key-value="f5a718eda068f352cc86dc3aa9d3ab315c02eb28c6154fdccb0631d01f4eed16"
-     data-searchengine-project-value="9c9f925a-d9d7-4a99-9417-4914be7da502"
-     data-searchengine-type-value="post"
-     data-searchengine-limit-value="100">
-     <div class="bloc-recherche-filtre">
-        <input type="text" data-searchengine-target="queryInput" class="form-control input-recherche" placeholder="Que recherchez-vous ?"/>
-     </div>
-     <template data-searchengine-target="resultTemplate">
-        <div>
-            <a  href="/posts/<%= item.encoded_uuid %>/<%= item.metadata.slug %>" data-turbo="optional">
-                <div class="">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <h2 class="">
-                                <%= item.title %>
-                            </h2>
-                        </div>
-                        <div class="col-lg-2">
-                          <p><%= item.date %></p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </template>
-
-    <div data-searchengine-target="resultsList"></div>
+          <div data-searchengine-target="resultsList"></div>
+      </div>
+    </div>
+  </div>
 </div>
