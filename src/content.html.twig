@@ -1,3 +1,48 @@
+{% if (section_id|default(null)) == 'posts' or (section_id|default(null)) == 'forms' %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">  
+      <div class="menu-header-post">
+        <div class="menu-header-pos-div">
+              {% for item in current_project.header %}
+
+                          <a href="{{ item.url }}"
+                             {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %} class="link-menu-header-post">
+                              {{ item.label }}
+                          </a>
+
+                {% endfor %}
+         </div>
+         <div class="menu-header-post-div-link">
+            <a href="">Cadre-territorial.fr</a>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">  
+      <div class="menu-header-post">
+        <div class="menu-header-pos-div">
+              {% for item in current_project.header %}
+
+                          <a href="{{ item.url }}"
+                             {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %} class="link-menu-header-page">
+                              {{ item.label }}
+                          </a>
+
+                {% endfor %}
+         </div>
+         <div class="menu-header-page-div-link">
+            <a href="">Cadre-territorial.fr</a>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 <div class="content">
     <div class="content-splash">
 
