@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">                                                    
-        {% for item in current_project.header %}
-              <li>
-                    <a href="{{ item.url }}"
-                       {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                        {{ item.label }}
-                    </a>
-              </li>
-          {% endfor %}
+    <div class="col-lg-12">  
+      <div class="menu-header">
+          {% for item in current_project.header %}
+
+                      <a href="{{ item.url }}"
+                         {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %} class="link-menu-header">
+                          {{ item.label }}
+                      </a>
+
+            {% endfor %}
+       </div>
     </div>
   </div>
 </div>
