@@ -1,36 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">                          
-                          
-                          {% for item in current_project.header %}
-                                <li>
-                                    <div class="header-menu-label">
-                                        <a href="{{ item.url }}"
-                                           {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                                            {{ item.label }}
-                                        </a>
-
-                                        {% if item.children|length > 0 %}
-                                            <i class="fal fa-angle-down"></i>
-                                        {% endif %}
-                                    </div>
-
-                                    {% if item.children|length > 0 %}
-                                        <div class="header-menu-submenu">
-                                            <ul>
-                                                {% for child in item.children %}
-                                                    <li>
-                                                        <a href="{{ child.url }}"
-                                                           {% if child.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
-                                                            {{ child.label }}
-                                                        </a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    {% endif %}
-                                </li>
-                            {% endfor %}
+    <div class="col-lg-12">                                                    
+        {% for item in current_project.header %}
+              <li>
+                    <a href="{{ item.url }}"
+                       {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                        {{ item.label }}
+                    </a>
+              </li>
+          {% endfor %}
     </div>
   </div>
 </div>
