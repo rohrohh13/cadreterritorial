@@ -28,3 +28,42 @@
         {% endfor %}
     </div>
 
+<div data-controller="searchengine"
+     data-searchengine-endpoint-value="https://search.citipo.com"
+     data-searchengine-key-value="f5a718eda068f352cc86dc3aa9d3ab315c02eb28c6154fdccb0631d01f4eed16"
+     data-searchengine-project-value="9c9f925a-d9d7-4a99-9417-4914be7da502"
+     data-searchengine-type-value="post"
+     data-searchengine-limit-value="100">
+     <div class="bloc-recherche-filtre">
+        <a href="">
+            <img class="logo-cgt-fapt-ressources" src="{{ (citipo_theme_asset_url('assets/cgt-fapt-ressources.png')) }}">
+        </a>
+        <div class="list-categories-items"><label class="list-categories-items-div input-first"><input type="radio" data-searchengine-target="categoryFilter" name="categoryFilter" checked="checked" value="" /><span>Toutes les ressources</span></label><label class="list-categories-items-div"><input type="radio" data-searchengine-target="categoryFilter" name="categoryFilter" value="Activités TELECOM" /><span>Activités TELECOM</span></label><label class="list-categories-items-div input-last"><input type="radio" data-searchengine-target="categoryFilter" name="categoryFilter" value="Activités POSTALES" /><span>Activités POSTALES</span></label class="list-categories-items-div"></div><input type="text" data-searchengine-target="queryInput" class="form-control input-recherche" placeholder="Que recherchez-vous ?"/>
+        <p class="paragraphe-demande"><a href="">Ajouter</a> ou <a href="">Demander</a> <br>une ressources</p>
+    </div>
+    <template data-searchengine-target="resultTemplate">
+        <div class="list-items-item">
+            <a  href="/posts/<%= item.encoded_uuid %>/<%= item.metadata.slug %>"  class="streched-link list-items-item-link" data-turbo="optional">
+                <div class="list-items-item-box">
+                    <div class="row align-items-center align-items-center-flex">
+                        <div class="">
+                            <h2 class="list-items-item-title">
+                                <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="54" height="54" rx="27" fill=""/>
+                                    <path d="M28.0906 34L27.1063 33.0284L31.1588 28.9759H20.6631V27.5696H31.1588L27.1063 23.5298L28.0906 22.5455L33.8179 28.2727L28.0906 34Z" fill="#2D0F0C" fill-opacity="0.6"/>
+                                </svg><span><%= item.title %></span>
+                            </h2>
+                        </div>
+                        <div class="col-md-2-img">
+                            <% if (item.metadata.image) { %>
+                                <img src="https://content.citipo.com/serve/<%= item.metadata.image %>" class="list-items-item-image" width="1700" height="1080">
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </template>
+
+    <div data-searchengine-target="resultsList"></div>
+</div>
