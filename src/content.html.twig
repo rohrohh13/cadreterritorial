@@ -1,26 +1,8 @@
 <div class="content">
     <div class="content-splash">
-        {% if previewing_text|default(null) %}
-            <div class="content-splash-previewing">
-                {{ previewing_text }}
-            </div>
-        {% endif %}
 
-        {% if section_name|default(null) %}
-            <h3 class="content-splash-section">
-                {% if section_url|default(null) %}
-                    <a href="{{ section_url }}">
-                        {{ section_name }}
-                    </a>
-                {% else %}
-                    {{ section_name }}
-                {% endif %}
-            </h3>
-        {% endif %}
 
-        <h1 class="content-splash-title">
-            {{ title }}
-        </h1>
+        <h1>{{ title }}</h1>
 
         {% if date|default(null) or categories|default([])|length > 0 %}
             <div class="content-splash-metadata">
