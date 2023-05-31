@@ -1,3 +1,19 @@
+<header>
+  <nav class="nav-ordi container">
+    <div class="row">
+      {% if page.is_homepage? %}
+      <div class="col-lg-12">
+
+
+
+
+            <a class="retour-hp" href="/">Cadre-territorial.fr</a>
+
+      </div>
+    </div> 
+  </nav>
+</header>
+
 <div class="home">
     <div class="home-jumbo"
          style="background-image: url('{{ jumbo_image|default(citipo_theme_asset_url('assets/home-default.jpg')) }}');">
