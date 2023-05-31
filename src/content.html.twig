@@ -82,28 +82,23 @@
     </div>
 
     {% if more|default([])|length > 0 %}
-        <div class="content-more">
-            <div class="row justify-content-center">
+
+            <div class="row">
                 {% for other in more|default([]) %}
                     <div class="col-12 col-md-6 col-lg-4">
-                        <div class="content-more-item box-offset">
-                            <div class="content-more-item-thumbnail">
 
-                            </div>
 
-                            <a href="{{ other.url }}" class="stretched-link list-items-item-link">
-                                <h5 class="list-items-item-title">
-                                    <span>{{ other.title }}</span>
-                                </h5>
+                            <a href="{{ other.url }}">
+                                <h2>{{ other.title }}</h2>
                             </a>
 
 
 
-                        </div>
+
                     </div>
                 {% endfor %}
             </div>
-        </div>
+
     {% endif %}
     </div> 
   </div>
