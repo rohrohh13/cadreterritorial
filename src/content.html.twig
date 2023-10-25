@@ -1,3 +1,23 @@
+{% if (section_id|default(null)) == 'posts' %}
+<div class="pop-up-partage">
+  <div>
+    <span>X</span>
+    <p>Ça intéressera surement mes collègues</p>
+    <a href="https://www.facebook.com/share.php?u={{ current_url }}" target="_blank">
+        PARTAGER SUR FACEBOOK
+    </a>
+    <a href="http://twitter.com/intent/tweet?status={{ current_url }}" target="_blank">
+        PARTAGER SUR TWITTER
+    </a>
+    <a href="https://api.whatsapp.com/send?text={{ current_url }}" target="_blank">
+        PARTAGER SUR WHATSAPP
+    </a>
+    <div>
+        COPIER LE LIEN
+    </div>
+  </div>
+</div>
+{% endif %}
 {% if (section_id|default(null)) == 'posts' or (section_id|default(null)) == 'forms' %}
 <div class="container">
   <div class="row">
