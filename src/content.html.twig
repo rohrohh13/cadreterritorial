@@ -56,7 +56,7 @@
         {% if (section_id|default(null)) == 'pages' %}
         <h1 class="title-pages">{{ title }}</h1>
         {% endif %}
-        {% if date|default(null) or categories|default([])|length > 0 %}
+        {% if date|default(null) or categories|default([])|length > 0 or (section_id|default(null)) == 'posts' %}
             <div class="content-splash-metadata">
                 {% if date|default(null) %}
                     <div class="content-splash-metadata-published-at">
@@ -73,7 +73,14 @@
                 {% endif %}
             </div>
         {% endif %}
-
+    {% if (section_id|default(null)) == 'posts' %}
+    <div class="sous-le-titre-post">
+      <div>
+      {{ date }}
+      </div>
+      <span class="ouvrir-partage">Partager</span>
+    </div>
+    {% endif %}
     {% if (section_id|default(null)) == 'posts' %}
     </div>
     <div class="col-lg-7">
