@@ -81,25 +81,29 @@
         {{ content|raw }}
     </div>
 
-    {% if more|default([])|length > 0 %}
 
-            <div class="row">
-                {% for other in more|default([]) %}
-                    <div class="col-12 col-md-6 col-lg-4">
-
-
-                            <a href="{{ other.url }}">
-                                <h2>{{ other.title }}</h2>
-                            </a>
-
-
-
-
-                    </div>
-                {% endfor %}
-            </div>
-
-    {% endif %}
     </div> 
+  </div>
+</div>
+<div class="article-suggere">
+  <div class="container">
+      {% if more|default([])|length > 0 %}
+              <div class="row">
+                  {% for other in more|default([]) %}
+                      <div class="col-12 col-md-6 col-lg-4">
+  
+  
+                              <a href="{{ other.url }}">
+                                  <h2>{{ other.title }}</h2>
+                              </a>
+  
+  
+  
+  
+                      </div>
+                  {% endfor %}
+              </div>
+  
+      {% endif %}
   </div>
 </div>
