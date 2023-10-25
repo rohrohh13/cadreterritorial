@@ -10,3 +10,19 @@ function myFunction() {
   navigator.clipboard.writeText(copyText.value);
 
 } 
+const shareButton = document.querySelector('.new-share');
+
+
+shareButton.addEventListener('click', event => {
+  if (navigator.share) { 
+   navigator.share({
+      title: 'CGT FAPT',
+      url: window.location.href
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+    } else {
+
+    }
+});
