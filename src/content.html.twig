@@ -74,13 +74,18 @@
             </div>
         {% endif %}
 
+    {% if (section_id|default(null)) == 'posts' %}
+    </div>
+    <div class="col-lg-7">
+        <div class="">
+        {{ content|raw }}
+        </div>
 
-
-
+    {% else %}
     <div class="">
         {{ content|raw }}
     </div>
-
+    {% endif %}
 
     </div> 
   </div>
