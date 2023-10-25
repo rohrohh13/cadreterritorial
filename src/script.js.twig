@@ -10,6 +10,13 @@ function myFunction() {
   navigator.clipboard.writeText(copyText.value);
 
 } 
+
+jQuery(function(){
+  jQuery(".ouvrir-partage").click(function(){
+            jQuery(".pop-up-partage ").removeClass('hide');
+    });
+});
+
 const shareButton = document.querySelector('.new-share');
 
 
