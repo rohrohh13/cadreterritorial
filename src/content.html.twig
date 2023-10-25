@@ -98,11 +98,11 @@
       {% if more|default([])|length > 0 %}
               <div class="row">
                   {% for other in more|default([]) %}
-                      <div class="col-12 col-md-6 col-lg-4">
+                      <div class="col-12 col-md-6 col-lg-4 article-suggere-proposition">
   
   
                               <a href="{{ other.url }}">
-                                <div class="article-suggere-proposition">
+                                <div class="">
                                   <h2>{{ other.title }}</h2>
                                 </div>
                               </a>
