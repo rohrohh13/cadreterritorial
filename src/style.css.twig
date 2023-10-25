@@ -519,7 +519,8 @@ border-bottom: 1px solid rgba(245, 245, 245, 0.2);
 
 
 .new-share {
-	display: none;
+	position: absolute;
+	right: 3000px;
 }
 
 @media (max-width: 992px) {
@@ -529,5 +530,7 @@ border-bottom: 1px solid rgba(245, 245, 245, 0.2);
 	}
 	.new-share {
 		display: inline-block;
+		position: initial;
+		right: unset;
 	}
 }
