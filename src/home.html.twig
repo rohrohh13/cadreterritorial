@@ -45,11 +45,11 @@
               <div class="bloc-article-div">
                   <a  href="/posts/<%= item.encoded_uuid %>/<%= item.metadata.slug %>" data-turbo="optional">
                       <div class="div-list-article">
-                          <div class="row">
-                              <div class="col-lg-10">
+                          <div class="">
+                              <div class="">
                                   <h2 class="h2-list-article"><%= item.title %></h2>
                               </div>
-                              <div class="col-lg-2">
+                              <div class="">
                                 <p class="p-list-article"><%= (new Date(item.date * 1000)).toLocaleDateString() %></p>
                               </div>
                           </div>
