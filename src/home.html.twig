@@ -22,13 +22,7 @@
   </div>
 </div>
 
-    <div class="container">
-        {% for key, block in blocks %}
-            {% if key != 0 or block.type != 'cta' %}
-                {{ block.content|raw }}
-            {% endif %}
-        {% endfor %}
-    </div>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12"> 
@@ -64,3 +58,10 @@
   </div>
 </div>
 
+    <div class="container">
+        {% for key, block in blocks %}
+            {% if key != 0 or block.type != 'cta' %}
+                {{ block.content|raw }}
+            {% endif %}
+        {% endfor %}
+    </div>
