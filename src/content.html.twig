@@ -63,10 +63,11 @@
                              {% if item.openNewTab %}target="_blank" rel="noopener noreferrer"{% endif %} class="link-menu-header-page">
                               {{ item.label }}
                           </a>
+
+                {% endfor %}
                           <a href="{{ current_url }}/#newsletter" class="link-menu-header-page">
                               Restez informé
                           </a>
-                {% endfor %}
          </div>
          <div class="menu-header-page-div-link">
             <a href="">Cadre-territorial.fr</a>
