@@ -27,6 +27,12 @@ function myFunctionFermerPopup() {
 } 
 
 
+  $('p').each(function() {
+      const $this = $(this);
+      if($this.html().replace(/\s|&nbsp;/g, '').length === 0)
+          $this.remove();
+  });
+
 
 function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
