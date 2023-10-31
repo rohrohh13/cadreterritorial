@@ -10,18 +10,22 @@ function myFunction() {
   navigator.clipboard.writeText(copyText.value);
 
 } 
+ $(document).ready(function () {
 
-jQuery(function(){
   jQuery(".ouvrir-partage").click(function(){
             jQuery(".pop-up-partage").removeClass('hide');
     });
-});
 
-jQuery(function(){
+  });
+
+ $(document).ready(function () {
+
   jQuery(".div-fermer-pop-up span").click(function(){
             jQuery(".pop-up-partage").addClass('hide');
     });
-});
+
+  });
+
 
 
 function printDiv(divName) {
